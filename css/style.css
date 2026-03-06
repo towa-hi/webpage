@@ -6,9 +6,11 @@
 
 html, body {
   height: 100%;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: #bebebe;
-  color: #f0f0f0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #000;
+  background-image: url('../dots.png');
+  background-repeat: repeat;
+  color: #000000;
 }
 
 main {
