@@ -1,63 +1,215 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
-  color: #1a1a1a;
-  background: #f8f8f8;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header {
-  background: #24292e;
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
-.tagline {
-  margin: 0.5rem 0 0;
-  opacity: 0.9;
-  font-size: 1rem;
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #bebebe;
+  color: #f0f0f0;
 }
 
 main {
-  flex: 1;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-section {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-section h2 {
-  margin-top: 0;
-  font-size: 1.25rem;
-}
-
-footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   padding: 1rem;
-  color: #666;
-  font-size: 0.875rem;
 }
 
-footer p {
-  margin: 0;
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: min(600px, calc(100vw - 4rem));
+  aspect-ratio: 7 / 11;
+  container-type: inline-size;
+}
+
+.card {
+  container-type: inline-size;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  aspect-ratio: 7 / 11;
+  background: #ffffff;
+  border: 1cqi solid #144263; 
+  box-shadow: 3cqi 5cqi #144263;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.laughing-man-overlay {
+  position: absolute;
+  top: 18cqi;
+  left: 24cqi;
+  width: 55cqi;
+  height: 55cqi;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laughing-man-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.laughing-man-overlay .laughing-man-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.laughing-man-overlay .laughing-man-text {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: laughing-man-spin 40s linear infinite;
+}
+
+.laughing-man-overlay .laughing-man-cap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+@keyframes laughing-man-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 6cqi 8cqi 8cqi;
+  min-height: 0;
+}
+
+.profile-top {
+  text-align: center;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 60cqi;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.name {
+  font-size: 6.5cqi;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #111;
+}
+
+.tagline {
+  margin-top: 2cqi;
+  font-size: 3.5cqi;
+  font-weight: 400;
+  color: #555;
+  letter-spacing: 0.04em;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6cqi;
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5cqi;
+}
+
+.label {
+  font-size: 2.8cqi;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+
+.value {
+  font-size: 3.8cqi;
+  font-weight: 500;
+  color: #222;
+}
+
+.value a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1.5px solid #ccc;
+  transition: border-color 0.2s;
+}
+
+.value a:hover {
+  border-color: #222;
+}
+
+.work-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1cqi;
+}
+
+.work-list li {
+  font-size: 3.5cqi;
+  font-weight: 400;
+  color: #333;
+  padding-left: 3.5cqi;
+  position: relative;
+}
+
+.work-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2cqi;
+  height: 1.2cqi;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 5cqi;
+  padding-top: 4cqi;
+  border-top: 1px solid #e5e5e5;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7cqi;
+  height: 7cqi;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #111;
+}
+
+.social-links svg {
+  width: 100%;
+  height: 100%;
 }
